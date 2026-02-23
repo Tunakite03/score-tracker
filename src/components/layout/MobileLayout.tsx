@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Home, Trophy, Settings } from 'lucide-react';
+import { Settings } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SettingsDialog } from '../settings/SettingsDialog';
 
