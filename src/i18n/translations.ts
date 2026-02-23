@@ -15,6 +15,9 @@ export const translations = {
       sessions: 'Sessions',
       stats: 'Stats',
 
+      // Path/PWD
+      'pwd.home': 'home',
+
       // Settings
       settings: 'Settings',
       language: 'Language',
@@ -121,6 +124,9 @@ export const translations = {
       // Navigation
       sessions: 'Phiên',
       stats: 'Thống kê',
+
+      // Path/PWD
+      'pwd.home': 'trang chủ',
 
       // Settings
       settings: 'Cài đặt',

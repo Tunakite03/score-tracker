@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Settings } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SettingsDialog } from '../settings/SettingsDialog';
+import { PathIndicator } from './PathIndicator';
 
 interface MobileLayoutProps {
    children: ReactNode;
@@ -60,6 +61,8 @@ export function MobileLayout({ children, title, showBackButton, headerAction, sh
                </div>
             </div>
          </header>
+         {/* Path Indicator (PWD) */}
+         <PathIndicator />
          {/* Main Content - Scrollable */}
          <main className='flex-1 overflow-y-auto min-h-1'>{children}</main>
 
