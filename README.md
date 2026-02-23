@@ -1,6 +1,24 @@
 # Score Tracker
 
+[![CI/CD](https://img.shields.io/github/actions/workflow/status/yourusername/score-tracker/ci.yml?branch=main&label=CI%2FCD&logo=github)](https://github.com/yourusername/score-tracker/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-61dafb?logo=react)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7-646cff?logo=vite)](https://vite.dev/)
+
 A production-quality React web application for tracking game scores across multiple rounds. Built with React, TypeScript, and IndexedDB for offline-first functionality.
+
+## 📋 Table of Contents
+
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Usage Guide](#usage-guide)
+- [Data Model](#data-model)
+- [Project Structure](#project-structure)
+- [Development](#development)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Features
 
@@ -268,6 +286,89 @@ Supports all modern browsers with IndexedDB:
 - Safari 10+
 - Edge 79+
 
+## Development
+
+### Code Quality
+
+This project uses:
+
+- **ESLint** - For code linting and consistency
+- **TypeScript** - For type safety
+- **Husky** - For pre-commit hooks
+- **Pre-commit checks** - Automatic linting before commits
+
+### Available Scripts
+
+```bash
+# Development
+pnpm dev          # Start dev server with hot reload
+pnpm build        # Build for production
+pnpm preview      # Preview production build
+pnpm lint         # Run ESLint
+```
+
+### Pre-commit Hooks
+
+Pre-commit hooks automatically run ESLint before each commit to ensure code quality. The hooks are set up using Husky and will prevent commits if linting errors are found.
+
+To bypass pre-commit hooks (not recommended):
+```bash
+git commit --no-verify
+```
+
+## Contributing
+
+Contributions are welcome! Please follow these guidelines:
+
+### Getting Started
+
+1. **Fork the repository**
+2. **Clone your fork**
+   ```bash
+   git clone https://github.com/yourusername/score-tracker.git
+   cd score-tracker
+   ```
+3. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
+4. **Create a feature branch**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+### Development Workflow
+
+1. Make your changes
+2. Ensure code passes linting: `pnpm lint`
+3. Test your changes locally: `pnpm dev`
+4. Build to verify: `pnpm build`
+5. Commit with descriptive messages
+6. Push to your fork
+7. Open a Pull Request
+
+### Code Style
+
+- Follow existing code patterns
+- Use TypeScript for type safety
+- Keep components focused and reusable
+- Write meaningful commit messages
+- Add comments for complex logic
+
+### Commit Convention
+
+We follow conventional commits:
+
+- `feat:` - New features
+- `fix:` - Bug fixes
+- `docs:` - Documentation changes
+- `style:` - Code style changes (formatting, etc.)
+- `refactor:` - Code refactoring
+- `test:` - Test additions or changes
+- `chore:` - Build process or auxiliary tool changes
+
+Example: `feat: add player statistics dashboard`
+
 ## Future Enhancements
 
 Potential features to add:
@@ -276,13 +377,23 @@ Potential features to add:
 - Player activation/deactivation
 - Round notes
 - Statistics and charts
-- Dark mode
+- Dark mode toggle
 - Multi-device sync (backend required)
 - Session templates
+- PWA support with offline caching
 
 ## License
 
-MIT
+MIT License - see the [LICENSE](LICENSE) file for details.
+
+Copyright (c) 2026 Score Tracker Contributors
+
+## Acknowledgments
+
+- [shadcn/ui](https://ui.shadcn.com/) - Beautiful UI components
+- [Dexie.js](https://dexie.org/) - IndexedDB wrapper
+- [Vite](https://vite.dev/) - Fast build tool
+- [React](https://react.dev/) - UI library
 
 ---
 
