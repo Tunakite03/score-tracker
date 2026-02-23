@@ -11,7 +11,7 @@ export default defineConfig({
       tailwindcss(),
       VitePWA({
          registerType: 'autoUpdate',
-         includeAssets: ['vite.svg', 'icon.svg'],
+         includeAssets: ['icon.svg'],
          manifest: {
             name: 'Score Tracker',
             short_name: 'Score Tracker',
