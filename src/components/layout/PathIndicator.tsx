@@ -24,7 +24,7 @@ export function PathIndicator() {
       if (location.pathname.startsWith('/session/')) {
          return [
             { label: t('pwd.home'), path: '/' },
-            { label: session?.name || t('loading'), path: location.pathname },
+            { label: session?.name || '...', path: location.pathname },
          ];
       }
 
@@ -38,13 +38,13 @@ export function PathIndicator() {
          <div className='flex items-center gap-1 text-xs text-neutral-600 font-mono'>
             <Home className='w-3 h-3' />
             <span className='text-neutral-400'>/</span>
-            {breadcrumbs.map((crumb, index) => (
+            {breadcrumbs.map((crumb) => (
                <div
-                  key={index}
+                  key={crumb.path}
                   className='flex items-center gap-1'
                >
-                  {index > 0 && <ChevronRight className='w-3 h-3 text-neutral-400' />}
-                  <span className={index === breadcrumbs.length - 1 ? 'text-neutral-900 font-medium' : ''}>
+                  {crumb.path !== '/' && <ChevronRight className='w-3 h-3 text-neutral-400' />}
+                  <span className={crumb.path === location.pathname ? 'text-neutral-900 font-medium' : ''}>
                      {crumb.label}
                   </span>
                </div>
