@@ -168,8 +168,10 @@ export function NewRoundForm({ sessionId }: NewRoundFormProps) {
          <div className='bg-white rounded-lg shadow-sm border border-neutral-200'>
             <div className='px-4 py-3 border-b border-neutral-200'>
                <div className='flex items-center justify-between mb-2'>
-                  <h2 className='font-bold text-lg text-neutral-900'>{t('round')} {nextRoundNo}</h2>
-                  
+                  <h2 className='font-bold text-lg text-neutral-900'>
+                     {t('round')} {nextRoundNo}
+                  </h2>
+
                   {/* Validation Mode Toggle */}
                   <div className='flex gap-1 bg-neutral-100 rounded-lg p-1'>
                      <button
@@ -197,9 +199,7 @@ export function NewRoundForm({ sessionId }: NewRoundFormProps) {
                   </div>
                </div>
                <p className='text-sm text-neutral-500'>
-                  {validationMode === 'zero-sum' 
-                     ? t('tapToChangeSign')
-                     : t('tapToChangeSignFree')}
+                  {validationMode === 'zero-sum' ? t('tapToChangeSign') : t('tapToChangeSignFree')}
                </p>
             </div>
 
@@ -247,13 +247,9 @@ export function NewRoundForm({ sessionId }: NewRoundFormProps) {
             <div className='px-4 py-3 border-t-2 border-neutral-200 bg-neutral-50'>
                <div className='flex items-center justify-between'>
                   <span className='font-semibold text-neutral-900'>{t('totalLabel')}</span>
-                  <span 
+                  <span
                      className={`text-xl font-bold ${
-                        validationMode === 'free'
-                           ? 'text-blue-600'
-                           : isValidTotal 
-                              ? 'text-green-600' 
-                              : 'text-red-600'
+                        validationMode === 'free' ? 'text-blue-600' : isValidTotal ? 'text-green-600' : 'text-red-600'
                      }`}
                   >
                      {currentTotal > 0 ? '+' : ''}

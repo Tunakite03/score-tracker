@@ -21,9 +21,9 @@ export function MobileLayout({ children, title, showBackButton, headerAction, sh
    const isHome = location.pathname === '/';
 
    return (
-      <div className='flex flex-col h-screen bg-neutral-50'>
+      <div className='flex flex-col h-full bg-neutral-50'>
          {/* Header */}
-         <header className='flex-shrink-0 z-40 bg-white border-b border-neutral-200 shadow-sm'>
+         <header className='shrink-0 z-40 bg-white border-b border-neutral-200 shadow-sm'>
             <div className='flex items-center justify-between px-4 h-14'>
                {(showSettings || (isHome && !headerAction)) && (
                   <button
@@ -61,11 +61,11 @@ export function MobileLayout({ children, title, showBackButton, headerAction, sh
             </div>
          </header>
          {/* Main Content - Scrollable */}
-         <main className='flex-1 overflow-y-auto min-h-0'>{children}</main>
+         <main className='flex-1 overflow-y-auto min-h-1'>{children}</main>
 
          {/* Bottom Navigation - Only on home */}
-         {isHome && (
-            <nav className='flex-shrink-0 bg-white border-t border-neutral-200 shadow-lg'>
+         {/* {isHome && (
+            <nav className='shrink-0 bg-white border-t border-neutral-200 shadow-lg'>
                <div className='flex items-center justify-around h-16'>
                   <button
                      className={`flex flex-col items-center justify-center flex-1 h-full ${
@@ -86,7 +86,7 @@ export function MobileLayout({ children, title, showBackButton, headerAction, sh
                   </button>
                </div>
             </nav>
-         )}
+         )} */}
 
          <SettingsDialog
             open={settingsOpen}
