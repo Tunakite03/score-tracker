@@ -85,9 +85,6 @@ jobs:
 
          - name: Build project
            run: pnpm build
-           env:
-              # Set base path if deploying to a subdirectory
-              # PUBLIC_URL: /${{ github.event.repository.name }}
 
          - name: Setup Pages
            uses: actions/configure-pages@v5
