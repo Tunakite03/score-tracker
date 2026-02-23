@@ -30,7 +30,7 @@ This project adheres to a Code of Conduct that all contributors are expected to 
 ### Development Setup
 
 1. **Fork the repository**
-   
+
    Click the "Fork" button at the top right of the repository page.
 
 2. **Clone your fork**
@@ -77,6 +77,7 @@ git checkout -b fix/your-bug-fix
 ```
 
 Branch naming conventions:
+
 - `feature/` - New features
 - `fix/` - Bug fixes
 - `docs/` - Documentation changes
@@ -105,6 +106,7 @@ pnpm dev
 ```
 
 Test on multiple browsers:
+
 - Chrome
 - Firefox
 - Safari (if available)
@@ -150,14 +152,15 @@ git push origin feature/your-feature-name
 - Use proper prop types
 
 Example:
+
 ```typescript
 interface ScoreboardProps {
-  sessionId: number;
-  onPlayerClick?: (playerId: number) => void;
+   sessionId: number;
+   onPlayerClick?: (playerId: number) => void;
 }
 
 export function Scoreboard({ sessionId, onPlayerClick }: ScoreboardProps) {
-  // Component logic
+   // Component logic
 }
 ```
 
@@ -248,6 +251,7 @@ We aim to review PRs within 2-3 business days. If you haven't heard back after a
 Use the [bug report template](.github/ISSUE_TEMPLATE/bug_report.yml) to report bugs.
 
 Include:
+
 - Clear description of the bug
 - Steps to reproduce
 - Expected vs actual behavior
@@ -260,6 +264,7 @@ Include:
 Use the [feature request template](.github/ISSUE_TEMPLATE/feature_request.yml) to suggest features.
 
 Include:
+
 - Problem statement
 - Proposed solution
 - Alternative approaches considered
@@ -276,6 +281,7 @@ Include:
 ## Recognition
 
 Contributors will be recognized in:
+
 - README contributors section (coming soon)
 - Release notes for significant contributions
 - GitHub contributors page

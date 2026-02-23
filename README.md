@@ -312,6 +312,7 @@ pnpm lint         # Run ESLint
 Pre-commit hooks automatically run ESLint before each commit to ensure code quality. The hooks are set up using Husky and will prevent commits if linting errors are found.
 
 To bypass pre-commit hooks (not recommended):
+
 ```bash
 git commit --no-verify
 ```
