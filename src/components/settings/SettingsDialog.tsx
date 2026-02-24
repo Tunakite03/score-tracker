@@ -1,4 +1,4 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '../ui/dialog';
 import { Button } from '../ui/button';
 import { useLanguage } from '@/i18n/LanguageContext';
 import type { Language } from '@/i18n/translations';
@@ -27,6 +27,7 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
                   <Globe className='w-5 h-5' />
                   {t('settings')}
                </DialogTitle>
+               <DialogDescription className='sr-only'>{t('settings')} configuration options</DialogDescription>
             </DialogHeader>
 
             <div className='space-y-6 py-4'>
