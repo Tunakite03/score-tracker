@@ -4,6 +4,26 @@ import './index.css';
 import App from './App.tsx';
 import { LanguageProvider } from './i18n/LanguageContext';
 
+// Register service worker for PWA
+if ('serviceWorker' in navigator) {
+   // Use the current path - vite-plugin-pwa will handle dev vs prod
+   const swPath = import.meta.env.DEV ? '/dev-sw.js?dev-sw' : '/sw.js';
+
+   window.addEventListener('load', () => {
+      navigator.serviceWorker
+         .register(swPath, {
+            scope: '/',
+            type: 'classic',
+         })
+         .then(() => {
+            console.log('Service Worker registered successfully');
+         })
+         .catch((error) => {
+            console.log('Service Worker registration failed:', error);
+         });
+   });
+}
+
 // // Fix iOS Safari viewport height issue with keyboard
 // function setViewportHeight() {
 //    // Get the actual viewport height
