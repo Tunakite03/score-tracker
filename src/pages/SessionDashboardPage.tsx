@@ -7,6 +7,7 @@ import { PlayerManagement } from '@/components/session/PlayerManagement';
 import { Scoreboard } from '@/components/scoreboard/Scoreboard';
 import { NewRoundForm } from '@/components/round/NewRoundForm';
 import { HistoryList } from '@/components/history/HistoryList';
+import { SessionDashboardSkeleton } from '@/components/loading/PageSkeletons';
 import { Trophy, Gamepad2, Users, History } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 
@@ -21,16 +22,7 @@ export function SessionDashboardPage() {
    const session = useLiveQuery(() => db.sessions.get(id), [id]);
 
    if (!session) {
-      return (
-         <MobileLayout
-            title={t('loading')}
-            showBackButton
-         >
-            <div className='flex items-center justify-center py-20'>
-               <p className='text-neutral-500'>{t('loadingSession')}</p>
-            </div>
-         </MobileLayout>
-      );
+      return <SessionDashboardSkeleton />;
    }
 
    const tabs = [

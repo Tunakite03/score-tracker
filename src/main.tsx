@@ -62,6 +62,17 @@ if ('serviceWorker' in navigator) {
 //    window.scrollTo(0, 0);
 // });
 
+// Hide splash screen after React app is mounted
+function hideSplashScreen() {
+   const splash = document.getElementById('splash-screen');
+   if (splash) {
+      splash.classList.add('fade-out');
+      setTimeout(() => {
+         splash.remove();
+      }, 300);
+   }
+}
+
 createRoot(document.getElementById('root')!).render(
    <StrictMode>
       <LanguageProvider>
@@ -69,3 +80,6 @@ createRoot(document.getElementById('root')!).render(
       </LanguageProvider>
    </StrictMode>,
 );
+
+// Hide splash screen after a brief delay to ensure content is rendered
+setTimeout(hideSplashScreen, 100);
